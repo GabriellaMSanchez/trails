@@ -3,7 +3,7 @@ function App() {
         <div>
             <h1>Trail Finder</h1>
             <h4>{new Date().toLocaleDateString()}</h4>
-            <textarea
+            <input
                 type="text" 
                 placeholder="Search a Park"
                 style={{border: '3px solid black'}}
