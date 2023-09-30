@@ -1,22 +1,14 @@
+import MainNavPage from './MainNavPage';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+
+library.add(fas, far, fab)
+
 function App() {
-    return (
-        <div>
-            <h1>Trail Finder</h1>
-            <h4>{new Date().toLocaleDateString()}</h4>
-            <input
-                type="text" 
-                placeholder="Search a Park"
-                style={{border: '3px solid black'}}
-                autoFocus
-                spellCheck
-            />
-            <ul>
-                <li>Map of all Parks</li>
-                <li>General Info</li>
-                <li>Park Announcements</li>
-                <li>Calendar Events</li>
-                <li>Random Park</li>
-            </ul>
+    return ( <div>
+        <MainNavPage />
         </div>
     );
 }
