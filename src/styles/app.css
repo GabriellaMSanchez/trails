@@ -1,0 +1,50 @@
+.main-nav-page {
+    background-image: url("../../public/images/forest.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.float-right {
+    float: right;
+}
+
+html, body, #root { 
+    height:100%; 
+}
+
+.search-bar-container {
+    height: 32px;
+    opacity: 0.5;
+
+}
+
+.nav-button-text {
+    display: inline;
+    margin-left: 8px;
+}
+
+.nav-button-img {
+    display: inline;
+}
+
+.main-nav-button {
+    width: 256px;
+    margin-bottom: 8px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.main-nav-footer {
+    margin-top: 16px;
+    padding: 0px 300px;
+    background-color: black;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.main-nav-footer p {
+    color: white;
+}
