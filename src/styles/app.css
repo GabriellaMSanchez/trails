@@ -17,7 +17,13 @@ html, body, #root {
 .search-bar-container {
     height: 32px;
     opacity: 0.5;
+}
 
+.main-nav-title-cards {
+    display: flex;
+    margin: auto;
+    justify-content:center;
+    width: 22rem;
 }
 
 .nav-button-text {
@@ -30,7 +36,6 @@ html, body, #root {
 }
 
 .main-nav-button {
-    width: 256px;
     margin-bottom: 8px;
     background: rgba(0, 0, 0, 0.5);
 }
@@ -43,6 +48,14 @@ html, body, #root {
     position: absolute;
     bottom: 0;
     width: 100%;
+}
+
+.main-nav-text h1 {
+    color: white;
+}
+
+.main-nav-text p {
+    color: white;
 }
 
 .main-nav-footer p {
