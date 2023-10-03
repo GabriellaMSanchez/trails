@@ -2,6 +2,8 @@ import NavButton from "./NavButton";
 import SearchBar from "./SearchBar";
 import Card from 'react-bootstrap/Card';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import './styles/mainNavPage.css';
+
 
 function MainNavPage() {
   return (
@@ -20,15 +22,15 @@ function MainNavPage() {
                         <p>
                             Today: {new Date().toLocaleDateString()}
                         </p>
-                    </Card.Subtitle>      
-                    <div className="search-bar-container text-center">
+                    </Card.Subtitle>
+                    <div className="search-bar-container">
                         <SearchBar />
                     </div>
                     <ButtonGroup vertical className="main-nav-button-grp text-center">
                         <NavButton
                             iconName="fa-solid fa-circle-info" 
                             text="General Info"
-                            />
+                        />
                         <NavButton
                             iconName="fa-solid fa-bullhorn"
                             text="Park Announcements"
