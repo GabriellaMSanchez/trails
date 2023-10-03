@@ -1,10 +1,9 @@
 
 function SearchBar() {
     return (
-        <input
+        <input className="search-bar"
         type="text" 
         placeholder="Search a Park"
-        style={{border: '3px solid black'}}
         autoFocus
         spellCheck
     />
