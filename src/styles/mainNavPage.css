@@ -1,0 +1,82 @@
+.main-nav-page {
+    background-image: url("../../public/images/forest.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 96px;
+
+}
+
+.search-bar-container {
+    height: 32px;
+    opacity: 0.5;
+    margin-bottom: 16px;
+}
+
+.main-nav-title-cards {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    width: 22rem;
+}
+
+.nav-button-text {
+    display: inline-block;
+    margin-left: 12px;
+}
+
+.nav-button-img {
+    display: inline-block;
+    margin-left: 76px;
+}
+
+.btn-group-vertical>.main-nav-button.btn {
+    background: rgba(0, 0, 0, .7);
+    border: rgba(0, 0, 0, .7);
+    width: calc(100% + 32px);
+    border-radius: 0;
+    text-align: left;
+}
+
+.main-nav-button.btn:hover {
+    background-color: black;
+}
+
+.main-nav-footer {
+    margin-top: 16px;
+    padding: 0px 300px;
+    background-color: black;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+}
+
+.main-nav-text h1 {
+    color: white;
+}
+
+.main-nav-text p {
+    color: white;
+}
+
+.main-nav-footer p {
+    margin: 4px 0;
+    color: white;
+}
+
+.search-bar {
+    border: 1px grey;
+    border-radius: 25px;
+}
+
+.main-nav-button-grp.btn-group-vertical {
+    width: 100%;
+    margin-left: -1rem;
+}
+
+#nav-quote {
+    margin-top: 16px;
+}
