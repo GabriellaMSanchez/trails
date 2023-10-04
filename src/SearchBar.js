@@ -8,11 +8,10 @@ function SearchBar() {
             height: "100%",
             width: "100%",
             paddingLeft: "8px"
-
         }}
         autoFocus
         spellCheck
-    />
+        />
     )
 }
 
