@@ -68,6 +68,9 @@
 .search-bar {
     border: 1px grey;
     border-radius: 25px;
+    height: 100%;
+    width: 100%;
+    padding-left: 8px;
 }
 
 .main-nav-button-grp.btn-group-vertical {

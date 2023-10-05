@@ -3,9 +3,26 @@ import SearchBar from "./SearchBar";
 import Card from 'react-bootstrap/Card';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import './styles/mainNavPage.css';
+import { useState } from 'react';
 
 
 function MainNavPage() {
+    const [count, setCount] = useState(0);
+
+    const handleClick = () => {
+        setCount(count + 1);
+    };
+
+    const handleChange = () => {
+        console.log('Input was entered!');
+    };
+
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            console.log('Enter was pressed!');
+        }
+    };
+
   return (
     <div className="main-nav-page">
         <Card className="main-nav-title-cards main-nav-text" style={{ background: "rgba(0, 0, 0, 0.5)"}}>
@@ -15,7 +32,7 @@ function MainNavPage() {
                     </Card.Title>
                     <Card.Subtitle className="text-center mb-2 text-muted">
                         <p>
-                            Find your next adventure. 
+                            Find your next adventure. Number of clicks: {count}
                         </p>
                     </Card.Subtitle>
                     <Card.Subtitle className="text-center mb-2 text-muted">
@@ -23,10 +40,18 @@ function MainNavPage() {
                             Today: {new Date().toLocaleDateString()}
                         </p>
                     </Card.Subtitle>
-                    <div className="search-bar-container">
+                    <div
+                        className="search-bar-container" 
+                        onChange={handleChange} 
+                        onKeyPress={handleKeyPress}
+                    >
                         <SearchBar />
                     </div>
-                    <ButtonGroup vertical className="main-nav-button-grp text-center">
+                    <ButtonGroup 
+                        vertical 
+                        className="main-nav-button-grp text-center" 
+                        onClick={handleClick}
+                    >
                         <NavButton
                             iconName="fa-solid fa-circle-info" 
                             text="General Info"
