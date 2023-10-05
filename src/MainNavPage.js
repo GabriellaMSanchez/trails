@@ -1,46 +1,94 @@
-import NavButton from './NavButton';
-import SearchBar from './SearchBar'
+import NavButton from "./NavButton";
+import SearchBar from "./SearchBar";
+import Card from 'react-bootstrap/Card';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import './styles/mainNavPage.css';
+import { useState } from 'react';
 
-function MainNavPage() { 
- 
-    return (
-        <div>
-            <h1>Trail Finder</h1>
-            <h4>Today: {new Date().toLocaleDateString()}</h4>
-            
-            <SearchBar />
-            
-            <ul>
-                <NavButton  
-                    iconName="fa-solid fa-location-dot" 
-                    text="Map of all Parks"
-                />
-                <NavButton 
-                    iconName="fa-solid fa-circle-info"
-                    text="General Info"
-                />
-                <NavButton 
-                    iconName="fa-solid fa-bullhorn"
-                    text="Park Announcements"
-                />
-                <NavButton 
-                    iconName="fa-regular fa-calendar-days"
-                    text="Calendar Events"
-                />
-                <NavButton
-                    iconName="fa-solid fa-bag-shopping"
-                    text="Link to shops that support NPS"
-                />
-                <NavButton 
-                    iconName="fa-solid fa-dice"
-                    text="Random Park"
-                />
-            </ul>
-            <footer>“Within National Parks is room — glorious room — room in which to find ourselves, in which to think and hope, to dream and plan, to rest and resolve.”
-— Enos Mills
-</footer>
-        </div>
-    );
+
+function MainNavPage() {
+    const [count, setCount] = useState(0);
+
+    const handleClick = () => {
+        setCount(count + 1);
+    };
+
+    const handleChange = () => {
+        console.log('Input was entered!');
+    };
+
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            console.log('Enter was pressed!');
+        }
+    };
+
+  return (
+    <div className="main-nav-page">
+        <Card className="main-nav-title-cards main-nav-text" style={{ background: "rgba(0, 0, 0, 0.5)"}}>
+                <Card.Body>
+                    <Card.Title className="text-center"> 
+                        <h1>Trail Finder</h1>
+                    </Card.Title>
+                    <Card.Subtitle className="text-center mb-2 text-muted">
+                        <p>
+                            Find your next adventure. Number of clicks: {count}
+                        </p>
+                    </Card.Subtitle>
+                    <Card.Subtitle className="text-center mb-2 text-muted">
+                        <p>
+                            Today: {new Date().toLocaleDateString()}
+                        </p>
+                    </Card.Subtitle>
+                    <div
+                        className="search-bar-container" 
+                        onChange={handleChange} 
+                        onKeyPress={handleKeyPress}
+                    >
+                        <SearchBar />
+                    </div>
+                    <ButtonGroup 
+                        vertical 
+                        className="main-nav-button-grp text-center" 
+                        onClick={handleClick}
+                    >
+                        <NavButton
+                            iconName="fa-solid fa-circle-info" 
+                            text="General Info"
+                        />
+                        <NavButton
+                            iconName="fa-solid fa-bullhorn"
+                            text="Park Announcements"
+                        />
+                        <NavButton
+                            iconName="fa-regular fa-calendar-days"
+                            text="Calendar Events"
+                        />
+                        <NavButton
+                            iconName="fa-solid fa-bag-shopping"
+                            text="NPS Partnered Shops"
+                        />
+                        <NavButton 
+                            iconName="fa-solid fa-dice" 
+                            text="Random Park"
+                            />
+                    </ButtonGroup>
+                    <div id="nav-quote">
+                        <Card.Text className="text-center">
+                            “Within National Parks is room — glorious room — room in which to find
+                            ourselves, in which to think and hope, to dream and plan, to rest and
+                            resolve.” — Enos Mills
+                        </Card.Text>
+                    </div>
+                </Card.Body>
+            </Card>
+      <footer className="main-nav-footer text-center">
+        <p>
+            Created 2023. 
+        </p>
+      </footer>
+    </div>
+  );
 }
 
 export default MainNavPage;
