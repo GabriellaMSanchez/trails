@@ -2,7 +2,7 @@ import NavButton from "./NavButton";
 import SearchBar from "./SearchBar";
 import Card from 'react-bootstrap/Card';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import './styles/mainNavPage.css';
+import '../styles/mainNavPage.css';
 import { useState } from 'react';
 
 
