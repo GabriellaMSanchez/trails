@@ -13,14 +13,8 @@ function MainNavPage() {
         setCount(count + 1);
     };
 
-    const handleChange = () => {
-        console.log('Input was entered!');
-    };
-
-    const handleKeyPress = (e) => {
-        if (e.key === 'Enter') {
-            console.log('Enter was pressed!');
-        }
+    const handleSubmit = (term) => {
+        console.log('Search a ', term);
     };
 
   return (
@@ -42,10 +36,8 @@ function MainNavPage() {
                     </Card.Subtitle>
                     <div
                         className="search-bar-container" 
-                        onChange={handleChange} 
-                        onKeyPress={handleKeyPress}
                     >
-                        <SearchBar />
+                        <SearchBar onSubmit={handleSubmit}/>
                     </div>
                     <ButtonGroup 
                         vertical 
