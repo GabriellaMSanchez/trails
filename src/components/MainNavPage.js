@@ -15,6 +15,7 @@ function MainNavPage() {
 
     const handleSubmit = (term) => {
         console.log('Search a ', term);
+      
     };
 
   return (
@@ -38,6 +39,7 @@ function MainNavPage() {
                         className="search-bar-container" 
                     >
                         <SearchBar onSubmit={handleSubmit}/>
+
                     </div>
                     <ButtonGroup 
                         vertical 
