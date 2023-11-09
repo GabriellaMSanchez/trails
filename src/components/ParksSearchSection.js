@@ -1,27 +1,37 @@
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
 // parent component to SearchBar and ParksSearchSection to hold state of what is being searched.
 // componentDidMount() {
 //     api call to populate this.state.parks
 // this.setState(parksObject) -> look at syntax
 // }
 
-// First iteration
-// API Call > save full call to state > when user hits enter
-// provide info from park searched. this will need to live in
-// App.js so that it calls a new component to populate a new page
-// with the park info/map
+// const parkNames = response.data.data.map((parkInfo) => parkInfo.fullName);
 
+function ParksSearchSection() {
+        
+    const [parks, setParks] = useState([]);
 
-// import SearchBar from 'SearchBar'
+    const fetchParks = async () => {
 
-// function ParksSearchSection() {
+        const response = await axios.get('https://developer.nps.gov/api/v1/parks', {
+            headers: {
+                'X-Api-Key': process.env.REACT_APP_API_KEY
+            },
+            params: {
+                limit: 500
+            }
+        });
+        
+        setParks(response.data.data)
 
-//     const handleSubmit = (term) => {
+    };
 
-//     };
+    useEffect(() => {
+        fetchParks();
+    }, []);
 
-//     return (
-//         console.log('')
-//     );
-// }
+};
 
-// export default ParksSearchSection;
+export default ParksSearchSection;
