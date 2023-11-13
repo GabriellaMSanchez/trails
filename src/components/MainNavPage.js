@@ -12,7 +12,7 @@ function MainNavPage() {
     const handleClick = () => {
         setCount(count + 1);
     };
-
+  
     const handleSubmit = (term) => {
         console.log('Search a ', term);
     };
