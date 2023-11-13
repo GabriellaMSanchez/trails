@@ -2,9 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import searchParks from './api';
-
-// searchParks();
+import { Provider } from './context/parks';
 
 // 2) Get a reference to the div with ID root
 const el = document.getElementById('root');
@@ -13,4 +11,8 @@ const el = document.getElementById('root');
 const root = ReactDOM.createRoot(el);
 
 // 4) Show the component on the screen
-root.render(<App />);
+root.render(
+    <Provider>
+        <App />
+    </Provider>
+    );

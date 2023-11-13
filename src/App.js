@@ -9,9 +9,8 @@ import ParksSearchSection from './components/ParksSearchSection';
 
 library.add(fas, far, fab)
 
-
-
 function App() {
+    
     ParksSearchSection();
 
     return (

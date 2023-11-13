@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useEffect, useContext } from 'react';
+import ParksContext from '../context/parks';
 
 // parent component to SearchBar and ParksSearchSection to hold state of what is being searched.
 // componentDidMount() {
@@ -10,24 +10,10 @@ import axios from 'axios';
 // const parkNames = response.data.data.map((parkInfo) => parkInfo.fullName);
 
 function ParksSearchSection() {
+    console.log("entering")
+
+    const { fetchParks } = useContext(ParksContext);
         
-    const [parks, setParks] = useState([]);
-
-    const fetchParks = async () => {
-
-        const response = await axios.get('https://developer.nps.gov/api/v1/parks', {
-            headers: {
-                'X-Api-Key': process.env.REACT_APP_API_KEY
-            },
-            params: {
-                limit: 500
-            }
-        });
-        
-        setParks(response.data.data)
-
-    };
-
     useEffect(() => {
         fetchParks();
     }, []);
